@@ -15,6 +15,7 @@ Este documento describe cómo preparar el entorno de desarrollo, trabajar con el
   - [3.3. Realizar cambios y commits](#33-realizar-cambios-y-commits)
   - [3.4. Subir los cambios](#34-subir-los-cambios)
   - [3.5. Crear un Pull Request](#35-crear-un-pull-request)
+  - [3.6. Contribuciones externas mediante Fork](#36-contribuciones-externas-mediante-fork)
 - [4. Convenciones de código](#4-convenciones-de-código)
 - [5. Desarrollo de funcionalidades](#5-desarrollo-de-funcionalidades)
 - [6. Pruebas y validaciones](#6-pruebas-y-validaciones)
@@ -147,6 +148,93 @@ Antes de solicitar la integración, comprueba que:
 Los Pull Requests deberán superar las comprobaciones automáticas de CI y obtener la revisión y aprobación correspondiente de los propietarios del código.
 
 La integración se realizará mediante Squash and merge, de manera que todos los commits del Pull Request se combinen en un único commit en main.
+
+### 3.6. Contribuciones externas mediante Fork
+
+Los colaboradores externos que no dispongan de permisos de escritura en el repositorio deberán utilizar el flujo de trabajo basado en Forks para proponer cambios.
+
+Este procedimiento permite desarrollar mejoras de forma independiente sin modificar directamente el repositorio original.
+
+#### 1. Crear un Fork
+
+Accede al repositorio original:
+
+[https://github.com/oscarab6/benchmark-php](https://github.com/oscarab6/benchmark-php)
+
+Pulsa el botón **Fork** de GitHub para crear una copia del repositorio en tu propia cuenta.
+
+#### 2. Clonar el Fork
+
+Clona tu copia personal del repositorio:
+```bash
+git clone https://github.com/USUARIO/benchmark-php.git
+cd benchmark-php
+```
+
+Sustituye USUARIO por tu nombre de usuario de GitHub.
+
+#### 3. Configurar el repositorio original como upstream
+
+Añade el repositorio original como remoto para poder sincronizar los cambios:
+```bash
+git remote add upstream https://github.com/oscarab6/benchmark-php.git
+```
+
+Puedes comprobar los remotos configurados mediante:
+```bash
+git remote -v
+```
+
+#### 4. Actualizar la rama principal y crear una rama de trabajo
+
+Sincroniza tu rama principal con los últimos cambios del repositorio original:
+```bash
+git fetch upstream
+git switch main
+git merge upstream/main
+```
+
+Crea una rama independiente para tu contribución:
+```bash
+git switch -c feature/nueva-funcionalidad
+```
+
+#### 5. Realizar los cambios
+
+Implementa la funcionalidad, corrección o mejora siguiendo las convenciones de código y commits establecidas en este documento.
+
+Comprueba que los cambios funcionan correctamente antes de enviarlos.
+
+#### 6. Subir los cambios a tu Fork
+
+Publica tu rama en tu repositorio personal:
+```bash
+git push -u origin feature/nueva-funcionalidad
+```
+
+#### 7. Crear un Pull Request
+
+Accede a GitHub y crea un Pull Request desde tu rama del Fork hacia el repositorio original.
+
+Comprueba que la configuración sea:
+
+- Base repository: oscarab6/benchmark-php.
+
+- Base branch: main.
+
+- Head repository: tu Fork personal.
+
+- Compare branch: feature/nueva-funcionalidad.
+
+Describe los cambios realizados y explica por qué consideras que deberían incorporarse al proyecto.
+
+#### 8. Revisión e integración
+
+El equipo mantenedor revisará la propuesta, podrá solicitar modificaciones y comprobará que se cumplen los requisitos del proyecto.
+
+Si el Pull Request es aprobado y supera las comprobaciones correspondientes, se integrará en main mediante **Squash and merge**.
+
+No es necesario disponer de permisos de escritura en el repositorio original para realizar este procedimiento.
 
 ## 4. Convenciones de código
 
