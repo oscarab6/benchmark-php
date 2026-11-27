@@ -155,7 +155,7 @@ Los colaboradores externos que no dispongan de permisos de escritura en el repos
 
 Este procedimiento permite desarrollar mejoras de forma independiente sin modificar directamente el repositorio original.
 
-#### 3.6.1. Crear un Fork
+#### 1. Crear un Fork
 
 Accede al repositorio original:
 
