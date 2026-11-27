@@ -15,6 +15,7 @@ Este documento describe cómo preparar el entorno de desarrollo, trabajar con el
   - [3.3. Realizar cambios y commits](#33-realizar-cambios-y-commits)
   - [3.4. Subir los cambios](#34-subir-los-cambios)
   - [3.5. Crear un Pull Request](#35-crear-un-pull-request)
+  - [3.6. Contribuciones externas mediante Fork](#36-contribuciones-externas-mediante-fork)
 - [4. Convenciones de código](#4-convenciones-de-código)
 - [5. Desarrollo de funcionalidades](#5-desarrollo-de-funcionalidades)
 - [6. Pruebas y validaciones](#6-pruebas-y-validaciones)
@@ -154,7 +155,7 @@ Los colaboradores externos que no dispongan de permisos de escritura en el repos
 
 Este procedimiento permite desarrollar mejoras de forma independiente sin modificar directamente el repositorio original.
 
-#### 1. Crear un Fork
+#### 3.6.1. Crear un Fork
 
 Accede al repositorio original:
 
